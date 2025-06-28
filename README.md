@@ -6,7 +6,7 @@ This project studies random‐projection methods to reduce constraint dimensions
 ## Experimental Setup
 
 We tested LP instances for various $(m,n)$ pairs and constraint densities $\mathrm{dens}\in\{0.1,0.3,0.5,0.7\}$. For each triplet $(m,n,\mathrm{dens})$:
-1. Sampled 10 random $A\in\mathbb R^{m\times n}$ with entries $\sim U[0,1]$, set $c=\mathbf1$.
+1. Sampled 10 random $A\in\mathbb R^{m\times n}$ with entries $\sim N[0,1]$, set $c=\mathbf1$.
 2. Generated feasible $b=Ax$ and infeasible $b$ via Farkas’ lemma.
 3. Solved both original and projected problems using Gaussian, sparse, and orthogonal projectors.
 
