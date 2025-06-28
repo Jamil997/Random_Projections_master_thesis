@@ -3,6 +3,30 @@
 ## Overview  
 This project studies random‐projection methods to reduce constraint dimensions in large LPs and evaluates two recovery algorithms on both feasible and infeasible instance sets.
 
+## Experimental Setup
+
+We tested LP instances for various $(m,n)$ pairs and constraint densities $\mathrm{dens}\in\{0.1,0.3,0.5,0.7\}$. For each triplet $(m,n,\mathrm{dens})$:
+1. Sampled 10 random $A\in\mathbb R^{m\times n}$ with entries $\sim U[0,1]$, set $c=\mathbf1$.
+2. Generated feasible $b=Ax$ and infeasible $b$ via Farkas’ lemma.
+3. Solved both original and projected problems using Gaussian, sparse, and orthogonal projectors.
+
+## Efficiency of Random Projection Methods
+
+- **Gaussian projector**  
+  - Reduces dimension by ≈50% (e.g. $n=1400\to k\approx327$).  
+  - Projection and solving on the dense $T A$ make total CPU time 3–10× higher than the original as $m,n$ grow.
+
+- **Sparse projector**  
+  - Projection and multiplication costs are negligible ($<0.05$ s).  
+  - Overall solve time remains within ~1× of the original LP, even for large instances—making it the most efficient.
+
+- **Orthogonal projector**  
+  - QR-based projection costs ~0.1–0.3 s; solve time increases by ~1.2–1.5×.  
+  - Preserves geometry perfectly but incurs moderate overhead.
+
+**Conclusion:** Sparse random projections offer the best efficiency trade-off: they cut constraint dimensions dramatically with almost no extra compute time while maintaining perfect infeasibility detection.  
+
+
 ## Features  
 - **Feasible Instances**  
   - Generator: `generate_feasible_problems(m, n, num_problems, density)`  
