@@ -3,6 +3,8 @@
 ## Overview  
 This project studies random‐projection methods to reduce constraint dimensions in large LPs and evaluates two recovery algorithms on both feasible and infeasible instance sets.
 
+## Model Description
+
 ![Alt text](images/1.jpg)
 
 ![Alt text](images/2.jpg)
