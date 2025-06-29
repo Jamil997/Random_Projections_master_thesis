@@ -16,21 +16,7 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
 2. Generated feasible $b=Ax$ and infeasible $b$ via Farkas’ lemma.
 3. Solved both original and projected problems using Gaussian, sparse, and orthogonal projectors.
 
-## Efficiency of Random Projection Methods
 
-- **Gaussian projector**  
-  - Reduces dimension by ≈50% (e.g. $n=1400\to k\approx327$).  
-  - Projection and solving on the dense $T A$ make total CPU time 3–10× higher than the original as $m,n$ grow.
-
-- **Sparse projector**  
-  - Projection and multiplication costs are negligible ($<0.05$ s).  
-  - Overall solve time remains within ~1× of the original LP, even for large instances—making it the most efficient.
-
-- **Orthogonal projector**  
-  - QR-based projection costs ~0.1–0.3 s; solve time increases by ~1.2–1.5×.  
-  - Preserves geometry perfectly but incurs moderate overhead.
-
-**Conclusion:** Sparse random projections offer the best efficiency trade-off: they cut constraint dimensions dramatically with almost no extra compute time while maintaining perfect infeasibility detection.  
 
 
 ## Features  
@@ -49,11 +35,26 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
     - Orthogonal via QR  
   - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc).
 The projected CPU includes sampling $T$, computing the matrix product $TA$, and solving the projected problem. The accuracy metric (`acc`) indicates no misclassification of infeasible instances as feasible.
-
-## Results
-
+## Efficiency of Random Projection Methods
 
 The original infeasible problem may be quickly identified as unsolvable by a HIGHS solver (for instance, if $b \le 0$ and $A \ge 0$), allowing it to terminate early. However, the projected problem often becomes feasible, requiring the solver to compute an optimal solution. This involves multiple iterations on a dense matrix, which is far more time-consuming than handling the sparse original matrix.
+
+- **Gaussian projector**  
+  - Reduces dimension by ≈50% (e.g. $n=1400\to k\approx327$).  
+  - Projection and solving on the dense $T A$ make total CPU time 3–10× higher than the original as $m,n$ grow.
+
+- **Sparse projector**  
+  - Projection and multiplication costs are negligible ($<0.05$ s).  
+  - Overall solve time remains within ~1× of the original LP, even for large instances—making it the most efficient.
+
+- **Orthogonal projector**  
+  - QR-based projection costs ~0.1–0.3 s; solve time increases by ~1.2–1.5×.  
+  - Preserves geometry perfectly but incurs moderate overhead.
+
+**Conclusion:** Sparse random projections offer the best efficiency trade-off: they cut constraint dimensions dramatically with almost no extra compute time while maintaining perfect infeasibility detection.  
+
+
+
 
 
 ## Requirements  
