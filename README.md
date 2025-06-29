@@ -38,10 +38,11 @@ The projected CPU includes sampling $T$, computing the matrix product $TA$, and 
 
 ## Efficiency of Random Projection Methods
 
-**Infeasible Instances**
+### Infeasible Instances
+
 The original infeasible problem may be quickly identified as unsolvable by a HIGHS solver (for instance, if $b \le 0$ and $A \ge 0$), allowing it to terminate early. However, the projected problem often becomes feasible, requiring the solver to compute an optimal solution. This involves multiple iterations on a dense matrix, which is far more time-consuming than handling the sparse original matrix.
 
-**Feasible Instances**
+### Feasible Instances
 
 - **Gaussian projector**  
   - Reduces dimension by ≈50% (e.g. $n=1400\to k\approx327$).  
