@@ -3,6 +3,10 @@
 ## Overview  
 This project studies random‐projection methods to reduce constraint dimensions in large LPs and evaluates two recovery algorithms on both feasible and infeasible instance sets.
 
+![Alt text](images/1.jpg)
+
+![Alt text](images/2.jpg)
+
 ## Experimental Setup
 
 We tested LP instances for various $(m,n)$ pairs and constraint densities $\mathrm{dens}\in\{0.1,0.3,0.5,0.7\}$. For each triplet $(m,n,\mathrm{dens})$:
