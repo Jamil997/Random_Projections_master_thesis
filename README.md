@@ -47,7 +47,14 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
   - Projectors:  
     - Sparse \(\{\pm1,0\}\) random matrix  
     - Orthogonal via QR  
-  - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc)
+  - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc).
+The projected CPU includes sampling $T$, computing the matrix product $TA$, and solving the projected problem. The accuracy metric (`acc`) indicates no misclassification of infeasible instances as feasible.
+
+## Results
+
+
+The original infeasible problem may be quickly identified as unsolvable by a HIGHS solver (for instance, if $b \le 0$ and $A \ge 0$), allowing it to terminate early. However, the projected problem often becomes feasible, requiring the solver to compute an optimal solution. This involves multiple iterations on a dense matrix, which is far more time-consuming than handling the sparse original matrix.
+
 
 ## Requirements  
 ```bash
