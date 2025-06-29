@@ -34,7 +34,8 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
     - Sparse \(\{\pm1,0\}\) random matrix  
     - Orthogonal via QR  
   - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc).
-The projected CPU includes sampling $T$, computing the matrix product $TA$, and solving the projected problem. The accuracy metric (`acc`) indicates no misclassification of infeasible instances as feasible.
+
+In both cases the projected CPU includes sampling $T$, computing the matrix product $TA$, and solving the projected problem. The accuracy metric (`acc`) indicates no misclassification of infeasible instances as feasible.
 
 ## Efficiency of Random Projection Methods
 
