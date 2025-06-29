@@ -32,7 +32,7 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
   - Generator: `generate_infeasible_problems(m, n, num_problems, density)`  
   - Projectors:  
     - Sparse $\(\{\pm1,0\}\)$ random matrix  
-    - Orthogonal via QR  
+    - Orthogonal via QR decomposition
   - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc).
 
 In both cases the projected CPU includes sampling $T$, computing the matrix product $TA$, and solving the projected problem. The accuracy metric (`acc`) indicates no misclassification of infeasible instances as feasible.
