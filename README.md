@@ -1,7 +1,7 @@
 # Random Projection for Linear Programming
 
 ## Overview  
-This project studies random‐projection methods to reduce constraint dimensions in large LPs and evaluates two recovery algorithms on both feasible and infeasible instance sets. This repository is part of my master thesis "Random Projections and Linear Programming". 
+This project studies random‐projection methods to reduce constraint dimensions in large LPs and evaluates two recovery algorithms on both feasible and infeasible instance sets. This repository is part of my master thesis "Matrix Sketching and Linear Programming". 
 
 ## Model Description
 
