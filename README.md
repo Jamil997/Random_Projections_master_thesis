@@ -31,7 +31,7 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
 - **Infeasible Instances**  
   - Generator: `generate_infeasible_problems(m, n, num_problems, density)`  
   - Projectors:  
-    - Sparse \(\{\pm1,0\}\) random matrix  
+    - Sparse $\(\{\pm1,0\}\)$ random matrix  
     - Orthogonal via QR  
   - Metrics: original vs. projected CPU time, projection/multiplication/solve breakdown, misclassification rate (acc).
 
