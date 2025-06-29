@@ -22,7 +22,7 @@ We tested LP instances for various $(m,n)$ pairs and constraint densities $\math
 ## Features  
 - **Feasible Instances**  
   - Generator: `generate_feasible_problems(m, n, num_problems, density)`  
-  - Projection: Gaussian random matrices of size \(k \times m\)  
+  - Projection: Gaussian random matrices of size $\(k \times m\)$
   - Recovery:  
     1. Dual‐based (exact-solve)  
     2. Primal-based (pseudoinverse)  
